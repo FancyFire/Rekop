@@ -1,3 +1,20 @@
+<div class="float-left mx-2.5 w-auto py-12 pr-2 sm:w-auto">
+    <nav>
+        <div class="section-title text-lg">LEAD CAPTURE
+            <ul>
+                <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Numbers</a></li>
+                <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Porting in</a></li>
+                <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Click to contact</a></li>                    
+            </ul>
+        </div>
+        <div class="section-title text-lg">LEAD MANAGEMENT
+            <ul>
+                <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Blocked numbers</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+</div>
 <div class="p-6 w-full text-2xl font-bold sm:p-6">
     Phone Settings
 </div>

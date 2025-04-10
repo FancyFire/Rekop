@@ -1,6 +1,24 @@
 <main class="px-2 space-y-4 overflow-x-hidden">
 
     <x-organisms.settings-nav></x-organisms.settings-nav>
+    
+    <div class="float-left mx-2.5 w-auto py-12 pr-2 sm:w-auto">
+        <nav>
+            <div class="section-title text-lg">INTEGRATIONS
+                <ul>
+                    <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Library</a></li>
+                    <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Manage</a></li>
+                    <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Integration filters</a></li>                    
+                </ul>
+            </div>
+            <div class="section-title text-lg">DATA ACCESS
+                <ul>
+                    <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">API Keys</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+    </div>
 
     <div class="p-6 w-full text-2xl font-bold sm:p-6">
         Integrations library
