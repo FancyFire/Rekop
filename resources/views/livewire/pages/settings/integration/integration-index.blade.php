@@ -2,7 +2,7 @@
 
     <x-organisms.settings-nav></x-organisms.settings-nav>
     
-    <div class="float-left mx-2.5 w-auto py-12 pr-2 sm:w-auto">
+    <div class="float-left mx-2.5 w-auto py-8 pr-2 sm:w-auto">
         <nav>
             <div class="section-title text-lg">INTEGRATIONS
                 <ul>

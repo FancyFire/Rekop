@@ -30,6 +30,7 @@ class PhoneTrackingIndex extends Component
     protected $listeners = [
         'phoneTrackingIndexRefresh' => '$refresh',
     ];
+    public $activeTab = 'numbers'; 
 
 
     public function showToDisplay(string $value)
@@ -120,5 +121,10 @@ class PhoneTrackingIndex extends Component
     private function beautifyPhoneNumber($number)
     {
         return substr($number, 2, 3) . '-' . substr($number, 5, 3) . '-' . substr($number, 8, 4);
+    }
+
+    public function setTab($tab)
+    {
+        $this->activeTab = $tab;
     }
 }

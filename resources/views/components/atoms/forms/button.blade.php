@@ -2,11 +2,13 @@
 'variant' => 'default',
 'href' => null,
 'type' => 'button',
-'active' => false
+'active' => false,
+'tab' => null
 ])
 
 @php
 $class = '';
+$activeClass = $tab =='numbers' ?? 'bg-blue-800 text-white';
 switch ($variant) {
     case 'success':
         $class = 'inline-flex items-center w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 sm:w-auto';
@@ -26,10 +28,14 @@ switch ($variant) {
     case 'top_nav':
         $class = 'relative group px-4 py-2 focus:outline-none text-lg';
         break;
+    case 'sec_nav':
+        $class = 'inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm';
+        break;
     default:
         $class = 'inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-transparent rounded-lg hover:bg-gray-100 focus:ring-gray-50';
     break;
 }
+
 @endphp
 @if($variant == 'top_nav')
     <a href="{{ $href }}" {{ $attributes->merge(['class' => $class]) }}>
@@ -38,6 +44,11 @@ switch ($variant) {
         {{ $active ? 'w-1/2 -translate-x-1/2': '' }}
         "></span>
     </a>
+
+@elseif($variant == 'sec_nav')
+<a href="{{ $href }}" {{ $attributes->merge(['class' => "$class $activeClass"]) }}>
+    {{ $slot }}
+</a>
 @else
     @if ($href)
         <a href="{{ $href }}" {{ $attributes->merge(['class' => $class]) }}>

@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
     // Route::get('phone-trackings/{company}/reports', App\Livewire\Pages\PhoneTrackings\PhoneTrackingReport::class)->name('report-phone-trackings');
     Route::get('call-histories', App\Livewire\Pages\PhoneNumbers\CallHistory::class)->name('call-histories');
 
-    Route::get('phone-settings', App\Livewire\Pages\PhoneTrackings\PhoneTrackingIndex::class)->name('phone-settings');
+    Route::get('phone-settings/numbers', App\Livewire\Pages\PhoneTrackings\PhoneTrackingIndex::class)->name('phone-settings');
     Route::get('phone-settings/add-schedule/{id}', App\Livewire\Pages\PhoneTrackings\AddSchedule::class)->name('add-schedule');
     Route::get('phone-settings/edit-schedule/{id}', App\Livewire\Pages\PhoneTrackings\EditSchedule::class)->name('edit-schedule');
     Route::get('phone-settings/edit/{id}', App\Livewire\Pages\PhoneTrackings\Edittrackings\Index::class)->name('edit-phonetracking');
