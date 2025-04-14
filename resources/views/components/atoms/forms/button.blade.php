@@ -2,13 +2,12 @@
 'variant' => 'default',
 'href' => null,
 'type' => 'button',
-'active' => false,
-'tab' => null
+'active' => false
 ])
 
 @php
 $class = '';
-$activeClass = $tab =='numbers' ?? 'bg-blue-800 text-white';
+$activeClass = 'bg-blue-800 text-white';
 switch ($variant) {
     case 'success':
         $class = 'inline-flex items-center w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-green-700 hover:bg-green-800 sm:w-auto';
@@ -46,9 +45,15 @@ switch ($variant) {
     </a>
 
 @elseif($variant == 'sec_nav')
+@if($active == 'numbers' || $active == 'inbound-ports' ||$active == 'click-to-contact')
 <a href="{{ $href }}" {{ $attributes->merge(['class' => "$class $activeClass"]) }}>
     {{ $slot }}
 </a>
+@else 
+<a href="{{ $href }}" {{ $attributes->merge(['class' => "$class"]) }}>
+    {{ $slot }}
+</a>
+@endif
 @else
     @if ($href)
         <a href="{{ $href }}" {{ $attributes->merge(['class' => $class]) }}>

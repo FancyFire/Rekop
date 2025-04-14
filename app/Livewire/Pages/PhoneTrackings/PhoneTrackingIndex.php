@@ -30,7 +30,7 @@ class PhoneTrackingIndex extends Component
     protected $listeners = [
         'phoneTrackingIndexRefresh' => '$refresh',
     ];
-    public $activeTab = 'numbers'; 
+    public string $section = 'numbers'; 
 
 
     public function showToDisplay(string $value)
@@ -82,6 +82,15 @@ class PhoneTrackingIndex extends Component
                 ->count();
 
             $this->phoneSets[$key]['number'] = $pn->number;
+        }
+
+        //display sections for lead-capture in phone-settings page
+        if (request()->is('phone-settings/routing/inbound-ports')) {
+            $this->section = 'inbound-ports';
+        } elseif (request()->is('phone-settings/routing/click-to-contact')) {
+            $this->section = 'click-to-contact';
+        } elseif (request()->is('phone-settings/routing/call-and-text/blocked-numbers')) {
+            $this->section = 'blocked-numbers';
         }
     }
 

@@ -38,7 +38,7 @@
                 </x-nav-link>
             </li>
                 <x-nav-link
-                    href="/phone-settings"
+                    href="/phone-settings/numbers"
                     :active="request()->is('phone-settings/numbers')"
                     title="Phone Settings">
                 <x-atoms.icons.phone-settings :active="request()->is('phone-settings')"></x-atoms.icons.phone-settings>

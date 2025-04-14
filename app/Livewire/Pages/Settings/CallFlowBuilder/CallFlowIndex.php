@@ -10,9 +10,17 @@ use Livewire\Attributes\Title;
 class CallFlowIndex extends Component
 {
     public $label;
+    public string $section = 'call-flows';
     public function mount()
     {
         $this->label = "Greeting > Menu > Dial";
+
+        //display sections for lead-capture in phone-settings page
+        if (request()->is('settings/workflow/message-flows')) {
+            $this->section = 'message-flows';
+        } elseif (request()->is('settings/workflow/keypad-scoring')) {
+            $this->section = 'keypad-scoring';
+        }
     }
     public function render()
     {

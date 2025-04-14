@@ -33,9 +33,28 @@ Route::middleware('auth')->group(function () {
     Route::get('phone-settings/add-schedule/{id}', App\Livewire\Pages\PhoneTrackings\AddSchedule::class)->name('add-schedule');
     Route::get('phone-settings/edit-schedule/{id}', App\Livewire\Pages\PhoneTrackings\EditSchedule::class)->name('edit-schedule');
     Route::get('phone-settings/edit/{id}', App\Livewire\Pages\PhoneTrackings\Edittrackings\Index::class)->name('edit-phonetracking');
+    
+    //tracking
+    Route::get('phone-settings/routing/call-and-text/numbers/active', App\Livewire\Pages\PhoneTrackings\PhoneTrackingIndex::class)
+    ->name('phone-settings.numbers');
+    Route::get('phone-settings/routing/inbound-ports', App\Livewire\Pages\PhoneTrackings\PhoneTrackingIndex::class)
+    ->name('phone-settings.inbound-ports');
+    Route::get('phone-settings/routing/click-to-contact', App\Livewire\Pages\PhoneTrackings\PhoneTrackingIndex::class)
+    ->name('phone-settings.click-to-contact'); 
+    Route::get('phone-settings/routing/call-and-text/blocked-numbers', App\Livewire\Pages\PhoneTrackings\PhoneTrackingIndex::class)
+    ->name('phone-settings.blocked-numbers'); 
 
+    //workflow
+    Route::get('settings/call-flow-builder', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
+    ->name('call-flow-builder');
+    Route::get('settings/workflow/call-flows', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
+    ->name('call-flow-builder.call-flows');
+    Route::get('settings/workflow/message-flows', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
+    ->name('call-flow-builder.message-flows');
+    Route::get('settings/workflow/keypad-scoring', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
+    ->name('call-flow-builder.keypad-scoring');
 
-    Route::get('settings/call-flow-builder/', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)->name('call-flow-builder');
+    //workflow create new
     Route::get('settings/call-flow-builder/{slug}', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowEdit::class)->name('call-flow-builder-edit');
 
     Route::get('settings/integration', App\Livewire\Pages\Settings\Integration\IntegrationIndex::class)->name('settings-integration');
