@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
     // Route::get('phone-trackings/{company}/reports', App\Livewire\Pages\PhoneTrackings\PhoneTrackingReport::class)->name('report-phone-trackings');
     Route::get('call-histories', App\Livewire\Pages\PhoneNumbers\CallHistory::class)->name('call-histories');
 
-    Route::get('phone-settings/numbers', App\Livewire\Pages\PhoneTrackings\PhoneTrackingIndex::class)->name('phone-settings');
+    //Route::get('phone-settings/numbers', App\Livewire\Pages\PhoneTrackings\PhoneTrackingIndex::class)->name('phone-settings');
     Route::get('phone-settings/add-schedule/{id}', App\Livewire\Pages\PhoneTrackings\AddSchedule::class)->name('add-schedule');
     Route::get('phone-settings/edit-schedule/{id}', App\Livewire\Pages\PhoneTrackings\EditSchedule::class)->name('edit-schedule');
     Route::get('phone-settings/edit/{id}', App\Livewire\Pages\PhoneTrackings\Edittrackings\Index::class)->name('edit-phonetracking');
@@ -45,19 +45,24 @@ Route::middleware('auth')->group(function () {
     ->name('phone-settings.blocked-numbers'); 
 
     //workflow
-    Route::get('settings/call-flow-builder', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
-    ->name('call-flow-builder');
+    //Route::get('settings/call-flow-builder', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
+    //->name('call-flow-builder');
     Route::get('settings/workflow/call-flows', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
     ->name('call-flow-builder.call-flows');
     Route::get('settings/workflow/message-flows', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
     ->name('call-flow-builder.message-flows');
     Route::get('settings/workflow/keypad-scoring', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
     ->name('call-flow-builder.keypad-scoring');
+    Route::get('settings/workflow/tags/company', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowIndex::class)
+    ->name('call-flow-builder.tags');
 
     //workflow create new
     Route::get('settings/call-flow-builder/{slug}', App\Livewire\Pages\Settings\CallFlowBuilder\CallFlowEdit::class)->name('call-flow-builder-edit');
 
-    Route::get('settings/integration', App\Livewire\Pages\Settings\Integration\IntegrationIndex::class)->name('settings-integration');
+    Route::get('settings/integration/library', App\Livewire\Pages\Settings\Integration\IntegrationIndex::class)->name('settings-integration.library');
+    Route::get('settings/integrations', App\Livewire\Pages\Settings\Integration\IntegrationIndex::class)->name('settings-integration.manage');
+    Route::get('settings/integration-filters', App\Livewire\Pages\Settings\Integration\IntegrationIndex::class)->name('settings-integration.integration-filters');
+    Route::get('settings/api-keys', App\Livewire\Pages\Settings\Integration\IntegrationIndex::class)->name('settings-integration.api-keys');
     Route::get('settings/integration/{slug}', App\Livewire\Pages\Settings\Integration\IntegrationJs::class)->name('settings-integration-edit');
     // Route::get('phone-settings/buy-number', App\Livewire\Pages\PhoneTrackings\AddPhonenumber::class)->name('buy-phone-number');
 

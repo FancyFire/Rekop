@@ -20,6 +20,8 @@ class CallFlowIndex extends Component
             $this->section = 'message-flows';
         } elseif (request()->is('settings/workflow/keypad-scoring')) {
             $this->section = 'keypad-scoring';
+        } elseif (request()->is('settings/workflow/tags/company')) {
+            $this->section = 'tags';
         }
     }
     public function render()

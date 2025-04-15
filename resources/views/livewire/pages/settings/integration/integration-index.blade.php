@@ -1,60 +1,64 @@
-<main class="px-2 space-y-4 overflow-x-hidden">
 
+<main class="px-2 space-y-4 overflow-x-hidden">
     <x-organisms.settings-nav></x-organisms.settings-nav>
-    
-    <div class="float-left mx-2.5 w-auto py-8 pr-2 sm:w-auto">
+
+    <div class="flex min-h-screen">
+      <aside class="w-64 bg-gray-100 p-4 border-r">
         <nav>
             <div class="section-title text-lg">INTEGRATIONS
                 <ul>
-                    <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Library</a></li>
-                    <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Manage</a></li>
-                    <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Integration filters</a></li>                    
+                    <li>
+                        <x-atoms.forms.button 
+                          variant="sec_nav"
+                          href="{{ route('settings-integration.library') }}"
+                          :active="$section === 'library'">
+                          Library
+                        </x-atoms.forms.button>
+                    </li> 
+                    <li>
+                        <x-atoms.forms.button 
+                          variant="sec_nav" 
+                          href="{{ route('settings-integration.manage') }}"
+                          :active="$section === 'manage'">
+                          Manage
+                        </x-atoms.forms.button>
+                    </li>
+                    <li>
+                          <x-atoms.forms.button 
+                          variant="sec_nav" 
+                          href="{{ route('settings-integration.integration-filters') }}"
+                          :active="$section === 'integration-filters'">
+                          Integration filters
+                          </x-atoms.forms.button>
+                    </li>    
                 </ul>
             </div>
             <div class="section-title text-lg">DATA ACCESS
                 <ul>
-                    <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">API Keys</a></li>
+                    <li>
+                        <x-atoms.forms.button 
+                        variant="sec_nav" 
+                        href="{{ route('settings-integration.api-keys') }}"
+                        :active="$section === 'api-keys'">
+                        API Keys
+                        </x-atoms.forms.button>
+                  </li>
                 </ul>
             </div>
             
         </nav>
+      </aside>
+      <div class="flex-1 p-6">
+        @if ($section === 'library')
+              @include('livewire.pages.settings.integration.library')
+              @elseif ($section === 'manage')
+              @include('livewire.pages.settings.integration.manage')
+              @elseif ($section === 'integration-filters')
+              @include('livewire.pages.settings.integration.integration-filters')
+              @elseif ($section === 'api-keys')
+              @include('livewire.pages.settings.integration.api-keys')
+          @endif
+      </div>
     </div>
-
-    <div class="p-6 w-full text-2xl font-bold sm:p-6">
-        Integrations library
-    </div>
-
-    <div class="bg-white block sm:flex border-b border-gray-200 p-4">
-        <div class="flex flex-col">
-            <div class="font-xl">
-                Recommended for You
-            </div>
-            <div class='flex space-x-4'>
-
-                <a href="{{ route('settings-integration-edit', ['slug' => 'javascript']) }}"
-                    class="max-w-sm p-6 bg-white transform hover:scale-105 transition duration-200">
-                    <div class="flex space-x-2">
-
-                        <div class="flex flex-col justify-between">
-                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"/>
-                              </svg>
-                              <div >
-                                {{-- change color depending on state --}}
-                                active
-                              </div>
-                        </div>
-
-                        <div class="flex flex-col">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Javascript Snippet</h5>
-                            <p class="font-normal text-gray-700 ">Capture visitor and session activity on a site.</p>
-                        </div>
-                    </div>
-
-                </a>
-
-            </div>
-        </div>
-    </div>
-
 </main>
+

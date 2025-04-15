@@ -34,7 +34,14 @@
           </div>
           <div class="section-title text-lg">MANAGE
               <ul>
-                  <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Tags</a></li>
+                  <li>
+                      <x-atoms.forms.button 
+                        variant="sec_nav" 
+                        href="{{ route('call-flow-builder.tags') }}"
+                        :active="$section === 'tags'">
+                        Tags
+                      </x-atoms.forms.button>
+                  </li>
                   <li><a href="#" class="inline-flex items-center p-2 text-sm font-medium text-center text-blue-400 hover:bg-blue-800 sm:w-auto rounded-sm">Teams</a></li>                   
               </ul>
           </div>
@@ -48,6 +55,8 @@
               @include('livewire.pages.settings.call-flow-builder.automation.message-flows')
               @elseif ($section === 'keypad-scoring')
               @include('livewire.pages.settings.call-flow-builder.automation.keypad-scoring')
+              @elseif ($section === 'tags')
+              @include('livewire.pages.settings.call-flow-builder.manage.tags')
           @endif
       </div>
     </div>
