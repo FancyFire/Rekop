@@ -21,12 +21,12 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', App\Livewire\Pages\Dashboard::class)->name('dashboard');
-    Route::get('account/companies', App\Livewire\Pages\Companies\CompanyIndex::class)->name('companies.all-company');
-    Route::get('account/users', App\Livewire\Pages\Companies\CompanyIndex::class)->name('companies.all-users');
-    Route::get('account/compliance-home', App\Livewire\Pages\Companies\CompanyIndex::class)->name('companies.compliance-home');
+    Route::get('account/companies', App\Livewire\Pages\Companies\CompanyIndex::class)->name('account.all-company');
+    Route::get('account/users', App\Livewire\Pages\Account\UserAccount::class)->name('account.all-user');
+    Route::get('account/compliance-home', App\Livewire\Pages\Companies\CompanyIndex::class)->name('account.compliance-home');
     Route::get('settings/create-number', App\Livewire\Pages\Settings\CreateNumber\CreateNumberIndex::class)->name('wizard');
-
-
+    Route::get('profile/edit', App\Livewire\Pages\Settings\Profile\ProfileIndex::class)->name('myinformation');
+    Route::get('notification-center/summary-emails', App\Livewire\Pages\Account\Notification::class)->name('notification.summary-emails');
 
     // Route::get('phone-trackings/{company}/reports', App\Livewire\Pages\PhoneTrackings\PhoneTrackingReport::class)->name('report-phone-trackings');
     Route::get('call-histories', App\Livewire\Pages\PhoneNumbers\CallHistory::class)->name('call-histories');

@@ -37,7 +37,7 @@
         <div class="flex-1 p-6">
             @if ($section === 'all-company')
                 @include('livewire.pages.companies.all-companies')
-                @elseif ($section === 'all-users')
+                @elseif ($section === 'all-user')
                 @include('livewire.pages.account.user-table')
                 @elseif ($section === 'compliance-home')
                 @include('livewire.pages.companies.compliance-home')
