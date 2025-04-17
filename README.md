@@ -21,6 +21,10 @@ php artisan key:generate
 ```
 php artisan migrate:fresh --seed
 ```
+## Update call history
+...
+php artisan fetch:call-history
+...
 
 ## Run the code
 ```
