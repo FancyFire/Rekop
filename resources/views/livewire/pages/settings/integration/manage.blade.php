@@ -91,13 +91,21 @@
                                 {{ $integration['status'] }}
                             </span>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">
-                                <svg class="h-5 w-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7 1.274 4.057-1.176 8-5.042 8-3.866 0-7.657-3.943-8.93-8z"></path></svg>
+                        <td class="px-6 inline-flex py-4 whitespace-nowrap text-right text-sm font-medium">
+                            <a href="#" data-tooltip-target="tooltip-support" class="text-indigo-600 hover:text-indigo-900">
+                                <x-atoms.icons.support-icon/>
                             </a>
-                            <a href="#" class="text-blue-600 hover:text-blue-900 ml-2">
-                                <svg class="h-5 w-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15.172 10 16l-3-3 3-3.001L18.586 6.586z"></path></svg>
+                            <div id="tooltip-support" role="tooltip" class="tooltip absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm text-white transition-opacity duration-300 bg-indigo-600 border border-gray-200 rounded-lg shadow-xs opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                Support Article
+                              <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                            <a href="#" data-tooltip-target="tooltip-gear" class="text-blue-600 hover:text-blue-900 ml-2">
+                                <x-atoms.icons.gear-icon/>
                             </a>
+                            <div id="tooltip-gear" role="tooltip" class="tooltip absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm text-white transition-opacity duration-300 bg-indigo-600 border border-gray-200 rounded-lg shadow-xs opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+                                Edit Integration
+                              <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

@@ -9,7 +9,7 @@
                 <input type="text" wire:model="label">
             </div>
             <div>
-                <x-atoms.forms.button href="{{route('phone-settings')}}">Cancel</x-atoms.forms.button>
+                <x-atoms.forms.button href="{{route('call-flow-builder.call-flows')}}">Cancel</x-atoms.forms.button>
                 <x-atoms.forms.button variant="primary">Save</x-atoms.forms.button>
             </div>
         </div>
@@ -36,7 +36,6 @@
                     <div data-popper-arrow></div>
                     <x-atoms.forms.button class='border'>   </x-atoms.forms.button>
                 </div>
-
                 {{-- This component manages the code blocks for the call flow builder --}}
                 <livewire:codeblockmanager.code-block-manager />
             </div>

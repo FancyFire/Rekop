@@ -21,7 +21,9 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', App\Livewire\Pages\Dashboard::class)->name('dashboard');
-    Route::get('companies', App\Livewire\Pages\Companies\CompanyIndex::class)->name('companies');
+    Route::get('account/companies', App\Livewire\Pages\Companies\CompanyIndex::class)->name('companies.all-company');
+    Route::get('account/users', App\Livewire\Pages\Companies\CompanyIndex::class)->name('companies.all-users');
+    Route::get('account/compliance-home', App\Livewire\Pages\Companies\CompanyIndex::class)->name('companies.compliance-home');
     Route::get('settings/create-number', App\Livewire\Pages\Settings\CreateNumber\CreateNumberIndex::class)->name('wizard');
 
 

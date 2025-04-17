@@ -8,7 +8,7 @@ class CodeBlockManager extends Component
 {
     public $codeBlocks = [];
     public $blockType = '';
-
+    public string $message = '';
     public $days = ['Any Day', 'Weekdays', 'Weekends', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     public $times = ['All Day', 'Between'];
     public $seconds = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];

@@ -21,8 +21,17 @@ class CompanyIndex extends Component
         'companyIndexRefresh' => '$refresh',
     ];
 
+    public string $section = 'all-company';
     // public $companies;
 
+    public function mount() 
+    {
+        if (request()->is('account/users')) {
+            $this->section = 'all-users';
+        } elseif (request()->is('account/compliance-home')) {
+            $this->section = 'compliance-home';
+        }
+    }
     public function render()
     {
 

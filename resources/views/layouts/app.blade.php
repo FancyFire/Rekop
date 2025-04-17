@@ -22,7 +22,7 @@
 </head>
 
 <body class="bg-gray-50">
-
+    
     {{-- @include('partials.header') --}}
 
     <div class="flex overflow-hidden bg-gray-50">

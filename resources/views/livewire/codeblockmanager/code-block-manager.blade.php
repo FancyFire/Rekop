@@ -34,8 +34,7 @@
                             <div class="flex-none">
                                 <span class="text-gray-700">Greetings</span>
                             </div>
-                        </button>
-
+                        </button>                        
                         <button
                             class="hover:border hover:border-blue-700 px-10 rounded transition duration-200 flex flex-col items-center text-sm"
                             wire:click="addBlock({{ $block['id'] }}, 'DIAL')">

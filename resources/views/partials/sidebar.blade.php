@@ -23,8 +23,8 @@
             </li>
             <li>
                 <x-nav-link
-                    href="/companies"
-                    :active="request()->is('companies')"
+                    href="/account/companies"
+                    :active="request()->is('account/companies')"
                     title="Company">
                 <x-atoms.icons.company :active="request()->is('companies')"></x-atoms.icons.company>
                 </x-nav-link>
@@ -38,8 +38,8 @@
                 </x-nav-link>
             </li>
                 <x-nav-link
-                    href="/phone-settings/numbers"
-                    :active="request()->is('phone-settings/numbers')"
+                    href="/phone-settings/routing/call-and-text/numbers/active"
+                    :active="request()->is('phone-settings/routing/call-and-text/numbers/active')"
                     title="Phone Settings">
                 <x-atoms.icons.phone-settings :active="request()->is('phone-settings')"></x-atoms.icons.phone-settings>
                 </x-nav-link>
@@ -94,7 +94,7 @@
         <span class="font-semibold text-gray-200">  #: {{ str_pad(auth()->user()->company->id, 5, '0', STR_PAD_LEFT) }}</span>
     </div>
     <div class="flex flex-col space-y-4">
-        <x-atoms.forms.button href="#" variant="secondary" class='transform hover:scale-105 transition duration-200'>
+        <x-atoms.forms.button href="/account/companies" variant="secondary" class='transform hover:scale-105 transition duration-200'>
             Account Settings
         </x-atoms.forms.button>
         <x-atoms.forms.button href="#" variant="secondary" class='transform hover:scale-105 transition duration-200'>
