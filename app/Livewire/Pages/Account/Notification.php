@@ -7,6 +7,10 @@ use Livewire\Component;
 class Notification extends Component
 {
     public $summaries = [];
+    public $notificationCalls = [];
+    public $integrationAlerts = [];
+    public $dynamicNumberAlert = [];
+    public $scheduledReport = [];
     public string $section = 'summary-emails';
     
     public function edit($index)
@@ -23,11 +27,15 @@ class Notification extends Component
     public function mount() 
     {
 
-        // if (request()->is('account/users')) {
-        //     $this->section = 'all-users';
-        // } elseif (request()->is('account/compliance-home')) {
-        //     $this->section = 'compliance-home';
-        // }
+        if (request()->is('notification-center/call-text-notifications')) {
+            $this->section = 'calls-text';
+        } elseif (request()->is('notification-center/integration-failure-alerts')) {
+            $this->section = 'integration-failure-alerts';
+        } elseif (request()->is('notification-center/dni-email-alerts')) {
+            $this->section = 'dni-email-alerts';
+        } elseif (request()->is('notification-center/scheduled-reports')) {
+            $this->section = 'scheduled-reports';
+        }
 
         $this->summaries = [
             [

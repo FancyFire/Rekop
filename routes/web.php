@@ -27,7 +27,11 @@ Route::middleware('auth')->group(function () {
     Route::get('settings/create-number', App\Livewire\Pages\Settings\CreateNumber\CreateNumberIndex::class)->name('wizard');
     Route::get('profile/edit', App\Livewire\Pages\Settings\Profile\ProfileIndex::class)->name('myinformation');
     Route::get('notification-center/summary-emails', App\Livewire\Pages\Account\Notification::class)->name('notification.summary-emails');
-
+    Route::get('notification-center/call-text-notifications', App\Livewire\Pages\Account\Notification::class)->name('notification.calls-text');
+    Route::get('notification-center/integration-failure-alerts', App\Livewire\Pages\Account\Notification::class)->name('notification.integration-failure-alerts');
+    Route::get('notification-center/dni-email-alerts', App\Livewire\Pages\Account\Notification::class)->name('notification.dni-email-alerts');
+    Route::get('notification-center/scheduled-reports', App\Livewire\Pages\Account\Notification::class)->name('notification.scheduled-reports');
+    
     // Route::get('phone-trackings/{company}/reports', App\Livewire\Pages\PhoneTrackings\PhoneTrackingReport::class)->name('report-phone-trackings');
     Route::get('call-histories', App\Livewire\Pages\PhoneNumbers\CallHistory::class)->name('call-histories');
 

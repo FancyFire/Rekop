@@ -49,7 +49,7 @@
                             <x-atoms.tables.td>{{ $user->company->lead_value }}</x-atoms.tables.td>
                             <x-atoms.tables.td>
                                 <x-atoms.forms.button onclick="openDropdown(`company-dropdown-{{$user->company->id}}`)">
-                                    <x-atoms.icons.dropdown-dots />
+                                    <x-atoms.icons.gear-icon />
                                 </x-atoms.forms.button>
 
                                 <x-molecules.tables.dropdown id="company-dropdown-{{$user->company->id}}">

@@ -151,7 +151,7 @@ class CreateNumberIndex extends Component
         $file = new FileController();
         $file->createJavaScriptFile();
         //redirect
-        return redirect()->route('phone-settings');
+        return redirect()->route('phone-settings.numbers');
     }
     public function purchaseNumber()
     {
