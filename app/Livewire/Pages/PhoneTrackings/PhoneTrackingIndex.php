@@ -8,7 +8,7 @@ use App\Integrations\SignalWire;
 use App\Models\Phonenumbers;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
-use App\Models\Schedule;
+use App\Models\Schedules;
 use App\Services\PhoneFormatService;
 use Livewire\Attributes\Title;
 
@@ -76,7 +76,7 @@ class PhoneTrackingIndex extends Component
         foreach ($this->phoneNumbers as $key => $pn) {
 
 
-            $this->phoneSets[$key]['sets'] = Schedule::where('id', $pn->id)
+            $this->phoneSets[$key]['sets'] = Schedules::where('id', $pn->id)
                 ->groupBy('id', 'sets')
                 ->get()
                 ->count();
@@ -130,10 +130,5 @@ class PhoneTrackingIndex extends Component
     private function beautifyPhoneNumber($number)
     {
         return substr($number, 2, 3) . '-' . substr($number, 5, 3) . '-' . substr($number, 8, 4);
-    }
-
-    public function setTab($tab)
-    {
-        $this->activeTab = $tab;
     }
 }

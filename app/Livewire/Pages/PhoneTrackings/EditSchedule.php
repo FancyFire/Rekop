@@ -28,13 +28,13 @@ class EditSchedule extends Component
         $this->pid = $phoneInfo['id'];
         $this->pname =  $phoneInfo['name'];
         $this->pnumber =  $phoneInfo['number'];
-
-        $this->schedules = Schedule::where('id', $phoneInfo['id'])->get();
+        
+        $this->schedules = Schedules::where('id', $phoneInfo['id'])->get();
         // $this->sets =  Schedules::select(Schedules::raw('count(sets) as user_count'))
         // ->groupBy('sets')->where('id', $this->pid)->get()->count();
         config(['database.connections.mysql.strict' => false]);
         DB::reconnect();
-        $this->sets =  Schedule::groupBy('sets')->where('id', $this->pid)->get()->count();
+        $this->sets =  Schedules::groupBy('sets')->where('id', $this->pid)->get()->count();
 
         foreach ($this->schedules as $sched) {
             $this->setStartSched($sched['day'], $sched['sets'], $sched['start_sched']);
