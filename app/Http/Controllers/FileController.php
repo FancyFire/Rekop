@@ -246,9 +246,8 @@ class FileController extends Controller
         $this->jsContent = str_replace(["\r", "\n"], '', $this->jsContent);
         $this->jsContent = rtrim($this->jsContent, ',');
 
-        // dd($this->jsContent);
+         //dd($this->jsContent);
         $path = "js/{$user->company->id}/swap.js";
-
         Storage::disk('public')->put($path, $this->jsContent);
     }
 }

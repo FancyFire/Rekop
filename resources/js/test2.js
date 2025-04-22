@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         try {
             const response = await fetch(
-                `https://koala-sincere-quail.ngrok-free.app/api/test-phone-number?phoneNumber=${number}`
+                `https://a5eb-2001-4456-ccf-d400-117f-c757-5ec6-b93e.ngrok-free.app/api/test-phone-number?phoneNumber=${number}`
             );
 
             if (!response.ok) {

@@ -73,7 +73,7 @@
         }
 
         // Send the traffic source data to Laravel using fetch (AJAX)
-        fetch("https://koala-sincere-quail.ngrok-free.app/api/traffic-source", {
+        fetch("http:rekop.test/api/traffic-source", {
             method: "POST",
             headers: headers,
             body: JSON.stringify(data),
